@@ -22,14 +22,13 @@ function jugo_de_fresas() {
     document.querySelector('#header').innerHTML = mensaje;
 
   }
-fruta = userInput.toLowerCase()
-
+fruta = parseInt(userInput)//con parseInt se convierte a enteros
 switch (fruta) {
-    case "fresa":  
+    case 1:  
     jugo_de_fresas()
 break
-    case "naranja":
-    case "mandarina":
+    case 2:
+    case 3:
     jugo_de_naranja()
 break
 default : 
