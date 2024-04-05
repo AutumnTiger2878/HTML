@@ -27,7 +27,7 @@ function Multiplicacion() {
         
     }
 }
-while (inicio == true) {
+while(inicio==true){
     var def = "Esa no es una de las opcions disponibles"
     var respuesta = prompt("1 = Suma\n2 = Resta\n3 = Multiplicacion\n4 = Division\n5 = Salir calcu")
 
