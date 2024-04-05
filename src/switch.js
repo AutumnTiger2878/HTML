@@ -22,8 +22,9 @@ function jugo_de_fresas() {
     document.querySelector('#header').innerHTML = mensaje;
 
   }
-fruta = parseInt(userInput)//con parseInt se convierte a enteros
-switch (fruta) {
+fruta = parseInt(userInput)//con parseInt se convierte a enteros 
+switch (fruta) 
+{
     case 1:  
     jugo_de_fresas()
 break
