@@ -3,35 +3,35 @@
 
 
 
-function construir(largo){
+function construir(largo) {
     arreglo.length = largo
 }
 
-function llenar(){
+function llenar() {
 
     let numeroAleatorio;
-    for(let i = 0; i < arreglo.length; i++){
+    for (let i = 0; i < arreglo.length; i++) {
         numeroAleatorio = Math.floor(Math.random() * 20) + 1
         arreglo[i] = numeroAleatorio
     }
     console.log(arreglo)
 }
 
-function promedioArreglo(){
-let sumaTotal = 0;
-for(let i = 0; i < arreglo.length; i++){
+function promedioArreglo() {
+    let sumaTotal = 0;
+    for (let i = 0; i < arreglo.length; i++) {
         sumaTotal = sumaTotal + arreglo[i];
-}
-return sumaTotal / arreglo.length
+    }
+    return sumaTotal / arreglo.length
 }
 
 
-function mayoresPromedio(){
+function mayoresPromedio() {
     let promedio = promedioArreglo();
     let cantidadDeElementos = 0;
 
-    for(let i = 0; i < arreglo.length; i++){   
-        if(arreglo[i] > promedio){
+    for (let i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] > promedio) {
             cantidadDeElementos++;
         }
     }
@@ -39,31 +39,31 @@ function mayoresPromedio(){
 }
 
 
-function sumaValor(aumentaArrelo){
+function sumaValor(aumentaArrelo) {
     arreglo.length = arreglo.length + aumentaArrelo
 }
 
 
-function sumaImPares(){
+function sumaImPares() {
     let totalImpares = 0
 
-    for(let i = 0; i < arreglo.length; i++){
-        
-        if( (arreglo[i] % 2) != 0){
+    for (let i = 0; i < arreglo.length; i++) {
+
+        if ((arreglo[i] % 2) != 0) {
             totalImpares = totalImpares + arreglo[i]
         }
-        
+
     }
     return totalImpares
 }
 
 
-function mayorArreglo(){
+function mayorArreglo() {
     let valorMayor = 0
 
-    for(let i = 0; i < arreglo.length; i++){
+    for (let i = 0; i < arreglo.length; i++) {
 
-        if(arreglo[i] > valorMayor){
+        if (arreglo[i] > valorMayor) {
             valorMayor = arreglo[i]
         }
 
@@ -72,21 +72,21 @@ function mayorArreglo(){
     return valorMayor
 }
 
-function mayorDiferencia(){
+function mayorDiferencia() {
 
     let valorDiferenciaMayor = 0
     let diferencia = 0
-    for(let i = 0; i <= arreglo.length; i++){
+    for (let i = 0; i <= arreglo.length; i++) {
 
-        
-        diferencia = arreglo[i] - arreglo[i+1]
 
-       
-        if(diferencia < 0){
-            diferencia = diferencia*-1
+        diferencia = arreglo[i] - arreglo[i + 1]
+
+
+        if (diferencia < 0) {
+            diferencia = diferencia * -1
         }
 
-        if(diferencia > valorDiferenciaMayor){
+        if (diferencia > valorDiferenciaMayor) {
             valorDiferenciaMayor = diferencia
         }
     }
@@ -94,28 +94,30 @@ function mayorDiferencia(){
 }
 
 
-function encontrarElemento(valorNumero){
+function encontrarElemento(valorNumero) {
 
     let encontroNumero = false;
+    var entero = parseInt(prompt("Digite el valor a encontrar"))
 
-    for(let i = 0; i < arreglo.length; i++){
+    for (let i = 0; i < arreglo.length; i++) {
 
-        if(valorNumero == arreglo[i]){
+        if (entero == arreglo[i]) {
             encontroNumero = true
         }
 
     }
 
+
     return encontroNumero
 }
 
 
-function posicionElemento(valorNumero){
+function posicionElemento(valorNumero) {
     let encontroNumero = false;
     let posicion = -1;
-    for(let i = 0; i < arreglo.length; i++){
+    for (let i = 0; i < arreglo.length; i++) {
 
-        if(valorNumero == arreglo[i]){
+        if (valorNumero == arreglo[i]) {
             encontroNumero = true
             posicion = i;
             i = arreglo.length;
@@ -123,9 +125,9 @@ function posicionElemento(valorNumero){
 
     }
 
-    if(encontroNumero){
+    if (encontroNumero) {
         return posicion
-    }else{
+    } else {
         return -1
     }
 
@@ -133,13 +135,13 @@ function posicionElemento(valorNumero){
 
 
 
-function invertirArreglo(){
-    
+function invertirArreglo() {
+
     let auxArregloInvertido = []
     auxArregloInvertido.length = arreglo.length
     let auxPosicion = 0
 
-    for(let i = arreglo.length; i >= 0; i--){
+    for (let i = arreglo.length; i >= 0; i--) {
         auxArregloInvertido[auxPosicion] = arreglo[i];
         auxPosicion++;
     }
@@ -148,21 +150,21 @@ function invertirArreglo(){
 
 
 
-function insertarElemento(posicion, valor){
+function insertarElemento(posicion, valor) {
 
- 
+
     let auxArreglo = []
     auxArreglo.length = arreglo.length
-    for(let i = 0; i < arreglo.length-1; i++){
+    for (let i = 0; i < arreglo.length - 1; i++) {
         auxArreglo[i] = arreglo[i]
     }
 
-    for(let i = posicion; i < arreglo.length-1; i++){
-        if(i == posicion){
-            arreglo[i] = valor 
-            arreglo[i+1] = auxArreglo[i]
-        }else{
-            arreglo[i+1] = auxArreglo[i]
+    for (let i = posicion; i < arreglo.length - 1; i++) {
+        if (i == posicion) {
+            arreglo[i] = valor
+            arreglo[i + 1] = auxArreglo[i]
+        } else {
+            arreglo[i + 1] = auxArreglo[i]
         }
     }
 
@@ -171,16 +173,16 @@ function insertarElemento(posicion, valor){
 }
 
 
-function mostrarHileraArreglo(){
+function mostrarHileraArreglo() {
 
-    for(let i = 0; i < arreglo.length; i++){
-        console.log("posición: "+i+" valor: "+arreglo[i])
+    for (let i = 0; i < arreglo.length; i++) {
+        console.log("posición: " + i + " valor: " + arreglo[i])
     }
 
 }
 
 
-function finalizarAplicacion(){
+function finalizarAplicacion() {
     finalizar = true;
 }
 let arreglo = []

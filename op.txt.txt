@@ -1,68 +1,169 @@
-document.querySelector('#header').innerHTML = "Estoy en el cotidiano 1"
+//se define el arreglo
 
-var tareas = []
-i = 0
-var inicio = true
+let arreglo = []
 
 
-function ver() {
-    alert(tareas)
-}
-function agregar() {
-    var agregar = prompt("Digite una nueva tarea")
-    alert(tareas.push(agregar))
-}
-function quitar_especifico() {
-    var borrar =prompt("Ingrese el numero de la tarea que desea eliminar")
- tareas.splice(borrar, 1)
+
+
+
+function construirArrgelo(largo) {
+    arreglo.length = largo
+
 
 }
-function modificar() {
-    var modificacion= prompt("Tarea que reemplazara la actual")
-    var number = prompt("Numero de la tarea a reemplazar")
-    tareas[number]=modificacion
+
+function Arreglollenar() {
+
+    for (let i = 0; i < arreglo.length; i++) {
+        let nuneroAleatorio = Math.floor(Math.random() * 20) + 1
+        arreglo[i] = nuneroAleatorio
+    }
+    alert("Arreglo:" + arreglo)
+    console.log(arreglo)
 }
-   
 
-function quitar() {
-    tareas.pop()
-    alert("Se elimino correctamente")
-}
-
-
-
-
-do {
-    
-
-    var opcion = prompt("1. Ver elementos de la terminal\n2. Agregar tarea a la terminal\n3. eliminar ultima tarea a la terminal\n4. eliminar tarea especifica\n5. Modificar una tarea\n6. Salir")
-
-    switch (parseInt(opcion)) {
-        case 1: 
-            ver()
-            break;
-        case 2:
-            agregar()  
-            break;
-        case 3:
-            quitar()
-            break
-        case 4:
-           quitar_especifico()
-            break
-            case 5:
-            modificar()
-            break
-        case 6:
-            salida = prompt("Desea terminar ciclo?")
-            if (ssalida == "sI"){
-                inicio = false
-            }
-            break
-        default:
-            alert("Esa no es una opcion")
-            break
-
+function promedioArreglo() {
+    let sumaTotal = 0;
+    for (let i = 0; i < arreglo.length; i++) {
+        sumaTotal = sumaTotal + arreglo[i];
 
     }
-} while (inicio==true );
+
+    alert("El promedio es:" + sumaTotal)
+    console.log(sumaTotal)
+    return sumaTotal / arreglo.length
+}
+
+
+function mayoresPromedio() {
+    let promedio = promedioArreglo();
+    let cantidadDeElementos = 0;
+    for (let i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] > promedio) {
+            cantidadDeElementos++;
+        }
+
+    }
+    return cantidadDeElementos
+}
+
+function sumaValor(Valor) {
+    var Valor = parseInt(prompt("Digite un valor a sumar con el arreglo"))
+    for (let index = 0; index < arreglo.length; index++) {
+        resultado = Valor + arreglo[index]
+        console.log(resultado)
+    }
+    return Valor
+}
+function sumaImPares() {
+    let totalImpares = 0
+
+    for (let i = 0; i < arreglo.length; i++) {
+
+        if ((arreglo[i] % 2) != 0) {
+            totalImpares = totalImpares + arreglo[i]
+        }
+
+    }
+    console.log(totalImpares)
+    return totalImpares
+}
+function mayorArreglo() {
+    let valorMayor = 0
+
+    for (let i = 0; i < arreglo.length; i++) {
+
+        if (arreglo[i] > valorMayor) {
+            valorMayor = arreglo[i]
+        }
+        console.log(valorMayor)
+    }
+
+    return valorMayor
+}
+function mayorDiferencia() {
+
+    let valorDiferenciaMayor = 0
+    let diferencia = 0
+    for (let i = 0; i <= arreglo.length; i++) {
+
+
+        diferencia = arreglo[i] - arreglo[i + 1]
+
+
+        if (diferencia < 0) {
+            diferencia = diferencia * 1
+        }
+
+        if (diferencia > valorDiferenciaMayor) {
+            valorDiferenciaMayor = diferencia
+        }
+        console.log(valorDiferenciaMayor)
+    }
+    return valorDiferenciaMayor
+}
+
+
+
+
+
+
+//Inicio programa
+
+var largo = parseInt(prompt("Digite el largo del arreglo"))
+
+construirArrgelo(largo);
+
+
+var ciclo = true
+
+do {
+
+    var menu = parseInt(prompt("1. Llenar el arreglo\n 2.Promedios del arreglo\n3. Valores mayores del promedio\n4.Suma de todos los valores \n 5. Suma de los numeros impares \n 6.Numero mayor del arreglo \n .Diferencias ente 2 valores del arreglo \n 8.Encontrar un elemento en especifico \n 9.Posicion especifica de un elemento \n 10. Invertir el arreglo \n 11.Insertsr nuevo elemento \n 12. Mostrar arreglo \n13.Cerrar aplicacion"))
+
+    switch (parseInt(menu)) {
+        case 1:
+            Arreglollenar();
+            break;
+
+        case 2:
+            promedioArreglo()
+            break;
+        case 3:
+
+            console.log(mayoresPromedio())
+
+            break;
+        case 4:
+            sumaValor()
+            break;
+        case 5:
+            sumaImPares()
+            break
+        case 6:
+            mayorArreglo()
+            break
+        case 7:
+            mayorDiferencia()
+            break
+        case 8:
+
+            break
+        case 9:
+            ciclo = false
+            break;
+        default: alert("Esa no es una opcion disponible")
+            break;
+
+    }
+
+} while (ciclo == true)
+
+
+
+
+
+
+
+
+
