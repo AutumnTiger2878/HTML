@@ -64,11 +64,43 @@ function sumaImPares() {
         }
         console.log(totalImpares)
     }
-   
+
     return totalImpares
 }
+function mayorArreglo() {
+    let valorMayor = 0
+
+    for (let i = 0; i < arreglo.length; i++) {
+
+        if (arreglo[i] > valorMayor) {
+            valorMayor = arreglo[i]
+        }
+        console.log(valorMayor)
+    }
+
+    return valorMayor
+}
+function mayorDiferencia() {
+
+    let valorDiferenciaMayor = 0
+    let diferencia = 0
+    for (let i = 0; i <= arreglo.length; i++) {
 
 
+        diferencia = arreglo[i] - arreglo[i + 1]
+
+
+        if (diferencia < 0) {
+            diferencia = diferencia * -1
+        }
+
+        if (diferencia > valorDiferenciaMayor) {
+            valorDiferenciaMayor = diferencia
+        }
+        console.log(valorDiferenciaMayor)
+    }
+    return valorDiferenciaMayor
+}
 
 
 
@@ -107,10 +139,15 @@ do {
 
             break;
         case 5:
-        sumaImPares()
+            sumaImPares()
             break
-
         case 6:
+            mayorArreglo()
+            break
+        case 7:
+            mayorDiferencia()
+            break
+        case 8:
 
 
             ciclo = false
